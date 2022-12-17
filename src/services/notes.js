@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 const baseUrl = '/api/notes'
 
 let token = null
@@ -12,7 +13,7 @@ const getAll = () => {
   return request.then(response => response.data)
 }
 
-const create = async newObject => {
+const create = async (newObject) => {
 
   const config = {
     headers: { Authorization: token },
@@ -26,8 +27,6 @@ const update = (id, newObject) => {
   const request = axios.put(`${baseUrl}/${id}`, newObject)
   return request.then(response => response.data)
 }
-
- 
 
 export default { 
     getAll, 

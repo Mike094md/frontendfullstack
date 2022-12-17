@@ -88,7 +88,7 @@ const LoginForm = () => {
                 Iniciar sesión
               </button>
               <button className="button-new">
-                <Link to="/register">Registrar nueva cuenta</Link>
+                <Link style={{ textDecoration: "none", color: "black"}} to="/register">Registrar nueva cuenta</Link>
               </button>
             </div>
           </form>
