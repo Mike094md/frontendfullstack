@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
-
+import { PropertiesProvider } from "./context/PropertiesProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <ChakraProvider>
     <React.StrictMode>
-      <App />
+       <PropertiesProvider>  
+          <App />
+        </PropertiesProvider>
     </React.StrictMode>
   // </ChakraProvider>
 );

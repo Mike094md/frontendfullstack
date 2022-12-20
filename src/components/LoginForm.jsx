@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import "../styles/css/loginform.css";
 import imagelogin from "../imgs/img-login7.jpg";
 import iconlogin from "../imgs/icon-login.png";
@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 import loginService from "../services/login";
 import notesService from "../services/notes"
 import { useNavigate } from "react-router-dom";
+import PropertiesContext from "../context/PropertiesProvider";
 
 const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  //const [user, setUser] = useState(null);
+  const { user, setUser } = useContext(PropertiesContext);
 
   const navigate = useNavigate();
   

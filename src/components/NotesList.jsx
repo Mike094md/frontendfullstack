@@ -39,13 +39,7 @@ const NotesList = () => {
       .catch(() => alert("Algo salio mal en post"));
   };
 
-  //TODO: Implementar un boton para cerrar sesión y llamar a window.localStorage.clear()
-  const handleLogout = () => {
-    window.localStorage.clear();
-    noteService.setToken(null);
-    setUser(null);
-    navigate("/login");
-  };
+
 
   const toggleImportance = (id) => {
     const note = notes.find((note) => note.id === id);
@@ -65,7 +59,7 @@ const NotesList = () => {
 
   return (
     <>
-      <HeaderNotes handleLogout={handleLogout} user={user} />
+      
       <button
         className="btn btn-primary btn-sm m-4"
         onClick={() => setShowAll(!showAll)}
@@ -87,10 +81,7 @@ const NotesList = () => {
         })}
       </ul>
       {user !== null ? (
-        <div>
           <NoteForm addNote={addNote} />
-          <ImagePicker />
-        </div>
       ) : (
         <button className="btn btn-primary" style={{ margin: "0 0 2rem 2rem" }}>
           <Link style={{ textDecoration: "none", color: "white" }} to="/login">
