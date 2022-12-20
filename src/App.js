@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import LoginForm from "./components/LoginForm";
 import RegiserForm from "./components/RegisterForm";
-import NotesList from "./components/NotesList";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PropertyForm from "./components/PropertyForm";
 import HeaderNotes from "./components/HeaderNotes";
-import noteService from "./services/notes";
-import { Navigate, useNavigate } from "react-router-dom";
-import { PropertiesProvider } from "./context/PropertiesProvider";
+import { Navigate } from "react-router-dom";
 import PropertiesContext from "./context/PropertiesProvider";
 import { PropertyList } from "./components/PropertiesView";
+import "./styles/scss/App.scss";
 //import {Property, PropertyList} from "./components/PropertiesView/";
 
 function App() {
@@ -28,15 +26,6 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginForm />}></Route>
           <Route path="/register" element={<RegiserForm />}></Route>
-          <Route
-            path="/admin"
-            element={
-              <p>
-                Administrador de inmuebles: Crear inmueble, ver tus inmuebles
-                .....
-              </p>
-            }
-          ></Route>
 
           <Route element={<HeaderNotes />}>
             <Route path="/" element={<PropertyList />}></Route>
