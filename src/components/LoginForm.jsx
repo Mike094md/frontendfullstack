@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 // import "../styles/css/loginform.css";
 import imagelogin from "../imgs/img-login7.jpg";
-import iconlogin from "../imgs/icon-login.png";
+import iconlogin from "../imgs/icon-login3.png";
 import "../styles/scss/loginform.scss";
 import { Link } from "react-router-dom";
 import loginService from "../services/login";
@@ -27,11 +27,16 @@ const LoginForm = () => {
         username,
         password,
       });
+      
       window.localStorage.setItem(
-        'loggedNoteappUser', JSON.stringify(user)
+        'userId', JSON.stringify(user.user.id)
       )
-      notesService.setToken(user.token)
-      setUser(user);
+      window.localStorage.setItem(
+        'token', JSON.stringify(user.token)
+      )
+      //notesService.setToken(user.token)
+      console.log("user", user.user)
+      setUser(user.user);// solo guardamos el usuario, no el token
       setUsername("");
       setPassword("");
       navigate("/"); // redirect to home page after login
@@ -48,7 +53,7 @@ const LoginForm = () => {
       <div className="container-form">
         <div className="title-login">
           <img src={iconlogin} alt="icon-login" width={30} />
-          <h1>Inmuebes App</h1>
+          <h1>HomeFinder</h1>
         </div>
         <div className="div-form-login">
           <form className="form-login" onSubmit={handleLogin}>
@@ -57,7 +62,7 @@ const LoginForm = () => {
               <div style={{ color: "red" }}>{errorMessage}</div>
             )}
             <div className="form-group">
-              <label>Username</label>
+              <label>Nombre de usuario</label>
               <input
                 type="text"
                 value={username}

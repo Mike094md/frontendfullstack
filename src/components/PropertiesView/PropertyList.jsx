@@ -1,21 +1,25 @@
 import React,{useContext, useEffect} from 'react'
 import PropertiesContext from '../../context/PropertiesProvider'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import CardProperty from '../CardProperty'
 
-export default function PropertyList() {
-  const { user, setUser } = useContext(PropertiesContext);
-
-  const checkIfUserIsLogged = () => {
-    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      //noteService.setToken(user);
-      setUser(user);
-    }
-  };
-  useEffect(() => {
-    checkIfUserIsLogged();
-  }, [])
+export default function PropertyList({ properties }) {
+  const { user } = useContext(PropertiesContext);
+  
   return (
-    <div>PropertyList {user?.username}</div>
+    <Row xs={2} md={3} lg={4} className="g-3">
+      {
+        properties.map(({...props}) => {
+          //console.log("USER" , user);
+            return (
+              <Col key={props.id}>
+                <CardProperty key={props.id} {...props}/>
+              </Col>
+            );
+          
+        })
+      }
+    </Row>
   )
 }

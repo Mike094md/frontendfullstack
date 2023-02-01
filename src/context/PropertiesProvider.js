@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const PropertiesContext = createContext({});
+const PropertiesContext = createContext(null);
 
 export const PropertiesProvider = ({ children }) => {
   const [user, setUser] = useState(null);

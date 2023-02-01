@@ -22,12 +22,12 @@ const NotesList = () => {
 
   // Queremos guardar el usuario loggeado si lo está
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
+    /*const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON);
       setUser(user);
       noteService.setToken(user.token);
-    }
+    }*/ 
   }, []);
 
   const addNote = (objectNote) => {
