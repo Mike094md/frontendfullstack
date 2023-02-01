@@ -38,7 +38,7 @@ const FavProperties = () => {
     <Container>
       <h1>Favorites</h1>
       {
-        properties.length === 0 ? <Spinner animation="border" /> :
+        properties.length === 0 ? <p>TEST</p> :
         <PropertyList properties={properties} />
       }
     </Container>
