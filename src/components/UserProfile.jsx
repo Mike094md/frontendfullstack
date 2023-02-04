@@ -96,7 +96,7 @@ const UserProfile = () => {
     <Container className="mt-3" fluid="sm">
       <PasswordModal show={modalShow} onHide={() => setModalShow(false)} />
 
-      <h1>Perfil de {user.name ?? user.username}</h1>
+      <h1>Perfil de {user?.name ?? user?.username}</h1>
 
       <Image src={img} alt="profile" rounded width="110" className="my-3" />
 
@@ -132,7 +132,7 @@ const UserProfile = () => {
           <Form.Control
             type="text"
             placeholder="NombreUser"
-            defaultValue={user.username}
+            defaultValue={user?.username}
             {...register("username", { required: true })}
           />
         </Form.Group>
@@ -141,7 +141,7 @@ const UserProfile = () => {
           <Form.Control
             type="text"
             placeholder="Nombre"
-            defaultValue={user.name}
+            defaultValue={user?.name}
             {...register("name")}
           />
         </Form.Group>
@@ -150,7 +150,7 @@ const UserProfile = () => {
           <Form.Control
             type="text"
             placeholder="Apellidos"
-            defaultValue={user.lastName}
+            defaultValue={user?.lastName}
             {...register("lastName")}
           />
         </Form.Group>
@@ -159,7 +159,7 @@ const UserProfile = () => {
           <Form.Control
             type="email"
             placeholder="Apellidos"
-            defaultValue={user.email}
+            defaultValue={user?.email}
             {...register("email")}
           />
         </Form.Group>

@@ -17,6 +17,8 @@ import UserProfile from "./components/UserProfile";
 import BuySection from "./components/BuySection";
 import userService from "./services/users";
 import FavProperties from "./components/FavProperties";
+import RentSection from "./components/RentSection";
+import Messages from "./components/Messages";
 
 
 
@@ -61,8 +63,9 @@ function App() {
             <Route path="publicar_anuncio" element={<ProtectedRoute><PropertyForm /></ProtectedRoute>} />
             <Route path="perfil" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
             <Route path="favoritos" element={<ProtectedRoute><FavProperties /></ProtectedRoute>} />
+            <Route path="mensajes" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
             <Route path="comprar" element={<BuySection/>} />
-            <Route path="alquilar" element={<h1>Inmebles para alquilar</h1>} />
+            <Route path="alquilar" element={<RentSection />} />
           </Route>
         </Routes>
       </Router>

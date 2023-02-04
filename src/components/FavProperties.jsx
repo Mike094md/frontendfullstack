@@ -10,6 +10,7 @@ import Spinner from 'react-bootstrap/Spinner';
 const FavProperties = () => {
   const { user, setUser } = useContext(PropertiesContext);
   const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getUserEffect = async () => {
@@ -21,6 +22,7 @@ const FavProperties = () => {
           .then((response) => {
             console.log(response);
             setProperties(response);
+            setLoading(false);
           })
           .catch((error) => {
             console.log(error);
@@ -29,17 +31,17 @@ const FavProperties = () => {
     };
 
     getUserEffect();
-  }, [user.liked]);
-
-
+  }, [user?.liked]);
 
 
   return (
     <Container>
       <h1>Favorites</h1>
+      
       {
-        properties.length === 0 ? <p>TEST</p> :
-        <PropertyList properties={properties} />
+        loading ? <Spinner animation="border" /> 
+        : properties.length === 0 ? <h4 className="d-flex justify-content-center text-muted">No tienes favoritos aún</h4> : <PropertyList properties={properties} />
+
       }
     </Container>
   );

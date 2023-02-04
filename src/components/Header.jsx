@@ -17,6 +17,8 @@ import imgprofile from "../imgs/img-profile2.jpg"
 import Stack from 'react-bootstrap/Stack'
 import { Outlet } from "react-router-dom";
 import userServices from "../services/users";
+import profileDefaultImg from "../imgs/profile.png";
+
 //TODO: Evitar que al recargar la pagina se pierda el usuario loggeado
 
 
@@ -98,12 +100,13 @@ export default function Header() {
                 publicados
               </NavDropdown.Item>
               <NavDropdown.Item style={{fontSize: ".7rem"}} onClick={() => navigate("/favoritos")}>favoritos</NavDropdown.Item>
+              <NavDropdown.Item style={{fontSize: ".7rem"}} onClick={() => navigate("/mensajes")}>mensajes</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item style={{fontSize: ".7rem"}}  onClick={handleLogout}>
                 Logout
               </NavDropdown.Item>
             </NavDropdown>
-            <Image src={user.image} alt="imgprofile" roundedCircle width="25" height="25" className="me-1" />
+            <Image src={user.image ?? profileDefaultImg } alt="imgprofile" roundedCircle width="25" height="25" className="me-1" />
             </Stack>
             </>
           

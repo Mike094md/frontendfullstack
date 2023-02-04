@@ -8,7 +8,7 @@ export default function PropertyList({ properties }) {
   const { user } = useContext(PropertiesContext);
   
   return (
-    <Row xs={2} md={3} lg={4} className="g-3">
+    <Row xs={2} md={3} lg={4} className="g-3 mb-4">
       {
         properties.map(({...props}) => {
           //console.log("USER" , user);
