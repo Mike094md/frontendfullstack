@@ -113,6 +113,8 @@ const CardProperty = ({ ...props }) => {
 
     setShowModalMessage(false)
   }
+  
+
 
 
   return (
@@ -185,12 +187,7 @@ const CardProperty = ({ ...props }) => {
 
         }
 
-        {user !== null &&
-          (gustado ? (
-            <HiHeart className="heart-icon2" onClick={deleteLiked} />
-          ) : (
-            <HiOutlineHeart className="heart-icon" onClick={addLiked} />
-          ))}
+        { gustado ? (<HiHeart className="heart-icon2" onClick={deleteLiked} />) : (<HiOutlineHeart className="heart-icon" onClick={addLiked} />) }
       </Card.Body>
     </Card>
     </>

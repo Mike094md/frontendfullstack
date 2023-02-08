@@ -96,7 +96,7 @@ export default function Header() {
             <Stack direction="horizontal" gap={1}>
             <NavDropdown className="justify-content-end" title={user.username} align="end"  size="sm" id="collasible-nav-dropdown">
               <NavDropdown.Item style={{fontSize: ".7rem"}} onClick={() => navigate("/perfil")}>Perfil</NavDropdown.Item>
-              <NavDropdown.Item style={{fontSize: ".7rem"}} >
+              <NavDropdown.Item style={{fontSize: ".7rem"}} onClick={() => navigate("/publicados")}>
                 publicados
               </NavDropdown.Item>
               <NavDropdown.Item style={{fontSize: ".7rem"}} onClick={() => navigate("/favoritos")}>favoritos</NavDropdown.Item>

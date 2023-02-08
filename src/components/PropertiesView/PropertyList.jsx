@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col'
 import CardProperty from '../CardProperty'
 
 export default function PropertyList({ properties }) {
-  const { user } = useContext(PropertiesContext);
   
   return (
     <Row xs={2} md={3} lg={4} className="g-3 mb-4">

@@ -12,14 +12,14 @@ import PropertyForm from "./components/PropertyFormView/PropertyForm";
 import Header from "./components/Header";
 import { Navigate } from "react-router-dom";
 import PropertiesContext from "./context/PropertiesProvider";
-import Home from "./components/Home";
+import Home from "./components/HomeView/Home";
 import UserProfile from "./components/UserProfile";
 import BuySection from "./components/BuySection";
 import userService from "./services/users";
 import FavProperties from "./components/FavProperties";
 import RentSection from "./components/RentSection";
 import Messages from "./components/Messages";
-
+import UserProperties from "./components/UserProperties";
 
 
 const ProtectedRoute = ({ children }) => {
@@ -64,6 +64,7 @@ function App() {
             <Route path="perfil" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
             <Route path="favoritos" element={<ProtectedRoute><FavProperties /></ProtectedRoute>} />
             <Route path="mensajes" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
+            <Route path="publicados" element={<ProtectedRoute><UserProperties /></ProtectedRoute>} />
             <Route path="comprar" element={<BuySection/>} />
             <Route path="alquilar" element={<RentSection />} />
           </Route>
