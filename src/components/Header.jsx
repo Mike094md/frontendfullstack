@@ -18,7 +18,7 @@ import Stack from 'react-bootstrap/Stack'
 import { Outlet } from "react-router-dom";
 import userServices from "../services/users";
 import profileDefaultImg from "../imgs/profile.png";
-
+//import '../styles/css/footer.css'
 //TODO: Evitar que al recargar la pagina se pierda el usuario loggeado
 
 
@@ -128,6 +128,11 @@ export default function Header() {
       </Container>
     </Navbar>
     <Outlet />
+    <footer>
+      <Container fluid className="footer-app">
+        <p className="text-center">HomeFinder 2021</p>
+      </Container>
+    </footer>
     </>
   );
 }

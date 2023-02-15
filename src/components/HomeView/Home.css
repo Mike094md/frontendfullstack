@@ -1,3 +1,7 @@
+.main-home{
+    
+}
+
 .background-img-home{
     background-image: url('../../imgs/img-reg2.jpg');
     background-size: cover;
@@ -15,8 +19,7 @@
     background-color: azure;
     display: flex;
     align-items: center;
-    flex-direction: column; 
-    width: 550px;
+    flex-direction: column;
     height: 150px;
     border-radius: 10px;
     position: relative;
@@ -105,4 +108,10 @@ input[type="radio"]:checked + label {
 
 .button-search:hover{
     background-color: rgb(38, 119, 52);
+}
+
+.section-cards{
+    padding-top: 100px;
+    min-height: 350px;
+    background-color: rgb(219, 235, 255);
 }

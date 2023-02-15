@@ -1,12 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
-import first from '../imgs/img-register.jpg';
+import first from '../imgs/undraw_Choosing_house_re_1rv7.png';
 import second from '../imgs/img-login.jpg';
 import third from '../imgs/img-login.jpg';
 
 function CarouselImgs() {
   return (
-    <Carousel fade>
-      <Carousel.Item>
+    <Carousel slide={false}>
+      <Carousel.Item >
         <img
           className="d-block w-100"
           src={first}
